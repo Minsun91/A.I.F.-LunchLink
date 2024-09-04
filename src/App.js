@@ -1,23 +1,18 @@
-import React, { useEffect } from 'react';
-import { requestForToken, onMessageListener } from './firebase';
-import LunchSelector from './components/LunchSelector';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import KonniPage from './components/KonniPage';
+import SelectorPage from './components/SelectorPage';
+import LoginPage from './components/LoginPage';
 
 function App() {
-  useEffect(() => {
-    requestForToken();
-
-    onMessageListener()
-      .then((payload) => {
-        console.log('Message received. ', payload);
-        alert('푸시 알림: ' + payload.notification.title);
-      })
-      .catch((err) => console.log('Failed to receive message: ', err));
-  }, []);
-
   return (
-    <div className="App">
-      <LunchSelector />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/konni" element={<KonniPage />} />
+        <Route path="/selector" element={<SelectorPage />} />
+      </Routes>
+    </Router>
   );
 }
 
