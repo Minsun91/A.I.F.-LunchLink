@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../firebase';
 import { collection, getDocs, addDoc } from 'firebase/firestore';
+import './App.css';
 
 const LunchSelector = () => {
   const [menus, setMenus] = useState([]);
@@ -21,7 +22,7 @@ const LunchSelector = () => {
     if (selectedMenu) {
       await addDoc(collection(db, 'selections'), {
         menu: selectedMenu,
-        user: "user@example.com", // 실제 사용자 이메일로 대체
+        user: "user@example.com", 
         timestamp: new Date()
       });
       alert('선택이 저장되었습니다!');
@@ -31,7 +32,7 @@ const LunchSelector = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>도시락 선택</h1>
       {loading ? <p>로딩 중...</p> : (
         <div>

@@ -19,11 +19,11 @@ export const auth = getAuth(app);
 const messaging = getMessaging(app);
 
 export const requestForToken = () => {
-  return getToken(messaging, { vapidKey: 'YOUR_VAPID_KEY' })
+  return getToken(messaging, { vapidKey: process.env.REACT_APP_FIREBASE_VAPID_KEY }) 
     .then((currentToken) => {
       if (currentToken) {
         console.log('Current token:', currentToken);
-        // Send the token to your server and update the UI if necessary
+        // 서버로 토큰을 보내거나 필요한 작업을 수행
       } else {
         console.log('No registration token available. Request permission to generate one.');
       }

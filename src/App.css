@@ -37,3 +37,81 @@ body {
     margin-top: 10px;
   }
   
+  /* 전체 페이지에 공통적으로 적용되는 스타일 */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100%;
+}
+
+/* 컨테이너를 화면 중앙에 배치 */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+textarea, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 10px 0;
+}
+
+/* 로딩 중 메시지 스타일 */
+p {
+  color: #555;
+}
+
+.menu-display {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.selector-container, .login-container, .konni-container {
+  width: 300px;
+  text-align: center;
+}
+
+button {
+  width: 100%;
+  margin-top: 10px;
+}

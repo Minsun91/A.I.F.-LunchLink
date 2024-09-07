@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './App.css';  // CSS 파일을 import
 
 function KonniPage() {
   const [menu, setMenu] = useState('');
@@ -8,12 +9,11 @@ function KonniPage() {
   };
 
   const uploadMenu = () => {
-    // Firebase에 메뉴 업로드하는 코드
     console.log('Menu uploaded:', menu);
   };
 
   return (
-    <div className="konni-container">
+    <div className="container konni-container">
       <h1>Upload Lunch Menu</h1>
       <textarea
         placeholder="Enter the lunch menu"
